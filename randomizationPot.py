@@ -9,10 +9,12 @@ from numpy import random
 listUniform= random.uniform(0,1,1000000)
 
 #maps each plant to a coordinate in the grid for 100% light and 50% light group 
+#the index of the list represents the original position of the plant 
+#the value in a given index represents the new position of the plant 
 map100=[]
 map50=[]
 
-#fills the map100 and map50 using the random numbers generated using uniform distribution		
+#assigns values to map100 and map50 using the random numbers generated using uniform distribution		
 count = 0
 while count != 16:
 	valueOnGrid100= int((random.choice(listUniform)*33)%16)
@@ -60,7 +62,7 @@ def indexToText50(index):
 			return arrayToText50[key] 
 
 
-#use of GUI framework to generate grid on the screen for plants under 100% and 50% light 
+#use of GUI framework to generate grid on the screen  
 from Tkinter import *
 master =Tk()
 left=Frame(master)
